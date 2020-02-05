@@ -1,0 +1,18 @@
+<?php if ($this->view->shortlink) : ?>
+    <div class="h1">
+        Ваша ссылка: <a href="<?= $this->view->shortlink; ?>"><?= $this->view->shortlink; ?></a>
+    </div>
+<?php endif; ?>
+<form action="/" method="post" class="mb-3">
+    <div class="form-group">
+        <label for="exampleInputUrl">Url</label>
+        <input name="url" type="url" class="form-control" id="exampleInputUrl" aria-describedby="urlHelp">
+        <small id="urlHelp" class="form-text text-muted">Введите ссылку которую необходимо укротить</small>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+<?php if ($this->view->error) : ?>
+    <div class="feedback-error text-warning">
+        <?= $this->view->error; ?>
+    </div>
+<?php endif; ?>
